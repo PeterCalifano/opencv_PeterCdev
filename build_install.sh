@@ -4,6 +4,9 @@ if [ ! -d "../opencv_contrib_PeterCdev" ]; then
     exit 1
 fi
 
+# Ensure installation of deps
+sudo apt install libvtk9-dev freeglut3-dev libglew-dev
+
 # Generate build files
 cmake -B build -S . -DWITH_VTK=ON -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib_PeterCdev/modules # Use -DWITH_TBB=On if you have TBB
 
